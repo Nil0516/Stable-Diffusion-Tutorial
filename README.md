@@ -99,12 +99,12 @@ pip install -r ./requirements.txt
 
 ### Create hypernetwork
 接下來把 txt2img 的頁面切換至 Train 的頁面，進行前置作業。
-在 Create hypernetwork 的 Name 輸入你對這個接下來的模型名稱，並在 Modules 全都進行勾選，最後勾選 Use Dropout 參數為 0, 0.05, 0.15 。
+在 Create hypernetwork 的 Name 輸入你對這個接下來的模型名稱，並在 Modules 全都進行勾選，最後勾選 Use Dropout 參數為 0, 0.05, 0.15 最後按下 Create Hypernetwork。
 ![](https://i.imgur.com/ck75U5q.png)
 
 ### Preprocess images
 
-接著到 Preprocess images 的頁面設定圖片的預處理，先在圖片來源資料夾的路徑放置你想訓練的圖片，並在輸出資料夾給一個乾淨的空間作輸出，輸出資料夾的路徑會是我們最終要訓練的模型的位置，影像的 Width 與 Height 基本上也是愈大愈好，但這個的先決條件是顯示卡的記憶體空間要足夠，否則接下來的訓練會很容易看到 out of memory 的字眼，下方參數為建議大小的常見設置，3080 10GB 我是用 512x512，最後按下 Create hypernetwork。
+接著到 Preprocess images 的頁面設定圖片的預處理，先在圖片來源資料夾的路徑放置你想訓練的圖片，並在輸出資料夾給一個乾淨的空間作輸出，輸出資料夾的路徑會是我們最終要訓練的模型的位置，影像的 Width 與 Height 基本上也是愈大愈好，但這個的先決條件是顯示卡的記憶體空間要足夠，否則接下來的訓練會很容易看到 out of memory 的字眼，最後按下 Process。
 
 * 256 x 256
 * 416 x 416
@@ -121,8 +121,12 @@ pip install -r ./requirements.txt
 * 圖片大小: 基本上這個值是愈大愈好，但根據你的顯示卡記憶體空間通常會決定的 size 的大小。
 
 我的顯示卡是 3080 下面是我在訓練時的配置。
-* batch_size: 4
-* width, height: 416x416
+1. 
+   * batch_size: 4
+   * width, height: 416x416
+2.
+   * batch_size: 1
+   * width, height: 604x604
 
 ![](https://i.imgur.com/wO12Ybk.png)
 
